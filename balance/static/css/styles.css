@@ -6,3 +6,11 @@ header {
     line-height: 50px;
     font-size: large;
 }
+
+.navbar {
+    background-color: #19a187;
+    color: #ffffff;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 20px;
+}
