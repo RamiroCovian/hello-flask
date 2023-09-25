@@ -6,39 +6,30 @@
     <title>Balance - Lista de movimientos</title>
     <link rel="stylesheet" href="static/css/flat-remix.min.css">
     <link rel="stylesheet" href="static/css/styles.css">
-    <style>
-        .lista {
-            border: solid thin black;
-            margin: 16px 0;
-            border-collapse: collapse;
-        }
-
-        .lista th,
-        .lista td {
-            border: solid thin black;
-            padding: 5px;
-        }
-    </style>
 </head>
 <body>
     <header>Balance de movimientos</header>
     <nav class="navbar">Inicio | Nuevo</nav>
-    <table class="lista">
-        <tr>
-            <th>Fecha</th>
-            <th>Concepto</th>
-            <th>Tipo</th>
-            <th>Cantidad</th>
-        </tr>
-        {% for m in movs %}
-        <tr>
-            <td>{{ m.fecha }}</td>
-            <td>{{ m.concepto }}</td>
-            <td>{{ m.ingreso_gasto }}</td>
-            <td>{{ m.cantidad }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <hr>
+    <main>
+        <table class="paper">
+            <tr>
+                <th class="titulo-tabla">Fecha</th>
+                <th class="titulo-tabla">Concepto</th>
+                <th class="titulo-tabla">Tipo</th>
+                <th class="titulo-tabla">Cantidad</th>
+            </tr>
+            {% for m in movs %}
+            <tr>
+                <td>{{ m.fecha }}</td>
+                <td>{{ m.concepto }}</td>
+                <td>{{ m.ingreso_gasto }}</td>
+                <td>{{ m.cantidad }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+    <hr>
     <footer>2023 Bootvamp Cero XVII</footer>
 </body>
 </html>

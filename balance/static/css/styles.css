@@ -14,3 +14,18 @@ header {
     line-height: 25px;
     padding-left: 20px;
 }
+
+main {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+table.paper {
+    width: 100%;
+    margin: 0;
+}
+
+table.paper .titulo-tabla {
+    border-bottom: solid thin #19a187;
+}
