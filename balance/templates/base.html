@@ -11,13 +11,10 @@
 
 <body>
 
-    <header>Balance de movimientos</header>
+    {% include 'components/header.html' %}
+    {% include 'components/navbar.html' %}
 
-    <nav class="navbar">
-        <a href="/">Inicio</a>
-        |
-        <a href="/nuevo">Nuevo</a>
-    </nav>
+    
     <hr>
 
     <main>
@@ -29,7 +26,7 @@
         {% endblock contenido %}
     </main>
     <hr>
-    <footer class="pie-pagina">2023 Bootvamp Cero XVII</footer>
+    {% include 'components/footer.html' %}
 </body>
 
 </html>
