@@ -44,3 +44,7 @@ table.paper .titulo-tabla {
     color: #666;
     padding: 20px;
 }
+
+.error {
+    color: #b8174c;
+}

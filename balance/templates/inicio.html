@@ -21,11 +21,17 @@
             </tr>
             {% if movs %}
             {% for m in movs %}
-            <tr>
-                <td>{{ m.fecha }}</td>
+            <tr {% if m.has_errors %} class="error" {% endif %}>
+                <td>
+                    {% if m.fecha%}
+                        {{ m.fecha }}
+                    {% else %}
+                        ---
+                    {% endif %}
+                </td>
                 <td>{{ m.concepto }}</td>
                 <td>
-                    {% if m.ingreso_gasto == "I" %}
+                    {% if m.tipo == "I" %}
                     Ingreso
                     {% else %}
                     Gasto
@@ -38,6 +44,7 @@
             <tr>
                 <td colspan="4" class="lista-vacia">No hay movimientos disponibles</td>
             </tr>
+            {% endif %}
         </table>
     </main>
     <hr>
