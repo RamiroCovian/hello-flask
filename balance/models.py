@@ -45,6 +45,18 @@ class ListaMovimientos:
                 )
                 self.lista_movimientos.append(movimiento)
 
+    def agregar(self):
+        """
+        TODO: reto para el miercoles
+        """
+        pass
+
+    def guardar_archivo(self):
+        """
+        TODO: reto para el miercoles
+        """
+        pass
+
     def __str__(self):
         result = ""
         for mov in self.lista_movimientos:

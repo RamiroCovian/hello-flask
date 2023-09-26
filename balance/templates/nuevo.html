@@ -1,6 +1,51 @@
 {% extends "base.html" %}
 
+{% block head_title %}
+{{ super() }}: Crear movimiento
+{% endblock head_title %}
+
+{% block page_title %}
+<h1>Crear nuevo movimiento</h1>
+{% endblock page_title %}
+
+
 {% block contenido %}
-Aqui debe aparecer el formulario para
-agregar un movimiento
+
+<!--
+    CRUD, Create, Read, Update, Delete
+
+    GET: Read
+    POST: Create (Delete, Update)
+    PUT: Update
+    DELETE: Delete
+-->
+
+<form action="/nuevo" method="get">
+    <div class="campo-formulario">
+        <label for="fecha">Fecha</label>
+        <input type="date" name="date" id="fecha">
+    </div>
+
+    <div class="campo-formulario">
+        <label for="concepto">Concepto</label>
+        <input type="text" name="subject" id="concepto">
+    </div>
+
+    <div class="campo-formulario">
+        <input type="radio" name="mov_type" id="ingreso" value="I">
+        <label for="ingreso">Ingreso</label>
+        <input type="radio" name="mov_type" id="gasto" value="G">
+        <label for="gasto">Gasto</label>
+    </div>
+
+    <div class="campo-formulario">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" name="Quantity" id="cantidad">
+    </div>
+
+    <div class="acciones">
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
 {% endblock %}
