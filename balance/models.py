@@ -12,7 +12,7 @@ class Movimiento:
             self.fecha = date.fromisoformat(fecha)
         except ValueError:
             self.fecha = None
-            self.errores.append(f"*****La fecha {fecha} no es valida")
+            self.errores.append(f"La fecha {fecha} no es valida")
         self.concepto = concepto
         self.tipo = tipo
         self.cantidad = cantidad

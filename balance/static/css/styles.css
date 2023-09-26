@@ -48,3 +48,13 @@ table.paper .titulo-tabla {
 .error {
     color: #b8174c;
 }
+
+p.error {
+    font-size: small;
+    margin: 0;
+    line-height: 0;
+}
+
+tr.error + tr td{
+    padding-bottom: 13px;
+}
