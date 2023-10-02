@@ -1,5 +1,5 @@
-import csv
 from datetime import date
+import csv
 
 from . import RUTA_FICHERO
 
@@ -49,13 +49,19 @@ class ListaMovimientos:
         """
         TODO: reto para el miercoles
         """
+        # self.lista_movimientos.append([fecha, concepto, ingreso_gasto, cantidad])
+        # self.lista_movimientos.sort(key=lambda item: item[0], reverse=True)
+        # self.guardar_archivo()
         pass
 
-    def guardar_archivo(self):
+    def guardar_archivo(self, fecha, concepto, ingreso_gasto, cantidad):
         """
         TODO: reto para el miercoles
         """
-        pass
+        with open(RUTA_FICHERO, "a", newline="\n") as fichero:
+            writer = csv.writer(fichero)
+            writer.writerow([fecha, concepto, ingreso_gasto, cantidad])
+            writer.writerows(self.lista_movimientos)
 
     def __str__(self):
         result = ""

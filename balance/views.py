@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 
 from . import app
 from .models import ListaMovimientos
@@ -21,6 +21,18 @@ def add_movement():
     Crea un movimiento y lo guarda en el archivo CSV
     """
     return render_template("nuevo.html")
+
+
+@app.route("/guardar", methods=["POST"])
+def guardar():
+    lista = ListaMovimientos()
+    fecha = request.form.get("date")
+    concepto = request.form.get("subject")
+    ingreso_gasto = request.form.get("mov_type")
+    cantidad = request.form.get("Quantity")
+    lista.guardar_archivo(fecha, concepto, ingreso_gasto, cantidad)
+
+    return redirect(url_for("add_movement"))
 
 
 @app.route("/modificar")

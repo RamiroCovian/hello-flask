@@ -18,9 +18,9 @@ nuestra máquina local.
 ## Variables de entorno
 
 - Linux / Mac
-  export FLASK_APP=hello
+  export FLASK_APP=main
   export FLASK_DEBUG=True
 
 - Windows
-  set FLASK_APP=hello
+  set FLASK_APP=main
   set FLASK_DEBUG=True
