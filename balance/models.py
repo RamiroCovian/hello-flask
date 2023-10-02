@@ -47,12 +47,14 @@ class ListaMovimientos:
                 )
                 self.movimientos.append(movimiento)
 
-    def agregar(self):
-        """ """
-        # self.lista_movimientos.append([fecha, concepto, tipo, cantidad])
-        # self.lista_movimientos.sort(key=lambda item: item[0], reverse=True)
-        # self.guardar_archivo()
-        pass
+    def agregar(self, movimiento):
+        """
+        Agrega el movimiento a la lista y actualiza el CSV
+        """
+        if not isinstance(movimiento, Movimiento):
+            raise ValueError("No puedes agregar eso, no es un movimiento")
+        self.movimientos.append(movimiento)
+        self.guardar_archivo()
 
     def guardar_archivo(self):
         """
