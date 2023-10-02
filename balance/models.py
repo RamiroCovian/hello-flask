@@ -8,6 +8,7 @@ CLAVES_IGNORADAS = ["errores"]
 
 class Movimiento:
     def __init__(self, fecha, concepto, tipo, cantidad):
+        # TODO: no puedo tener fecha futura
         self.errores = []
 
         try:
