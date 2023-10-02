@@ -12,7 +12,7 @@ def home():
     lista = ListaMovimientos()
     lista.leer_desde_archivo()
 
-    return render_template("inicio.html", movs=lista.lista_movimientos)
+    return render_template("inicio.html", movs=lista.movimientos)
 
 
 @app.route("/nuevo")
@@ -28,9 +28,9 @@ def guardar():
     lista = ListaMovimientos()
     fecha = request.form.get("date")
     concepto = request.form.get("subject")
-    ingreso_gasto = request.form.get("mov_type")
+    tipo = request.form.get("mov_type")
     cantidad = request.form.get("Quantity")
-    lista.guardar_archivo(fecha, concepto, ingreso_gasto, cantidad)
+    lista.guardar_archivo(fecha, concepto, tipo, cantidad)
 
     return redirect(url_for("add_movement"))
 
