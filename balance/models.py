@@ -7,9 +7,15 @@ CLAVES_IGNORADAS = ["errores"]
 
 
 class Movimiento:
-    def __init__(self, fecha, concepto, tipo, cantidad):
+    def __init__(self, dic_datos):
         # TODO: no puedo tener fecha futura
+
         self.errores = []
+
+        fecha = dic_datos.get("fecha", "")
+        concepto = dic_datos.get("concepto", "Gastos varios")
+        tipo = dic_datos.get("tipo")
+        cantidad = dic_datos.get("cantidad")
 
         try:
             self.fecha = date.fromisoformat(fecha)
@@ -40,12 +46,7 @@ class ListaMovimientos:
         with open(RUTA_FICHERO, "r") as fichero:
             reader = csv.DictReader(fichero)
             for fila in reader:
-                movimiento = Movimiento(
-                    fila["fecha"],
-                    fila["concepto"],
-                    fila["tipo"],
-                    fila["cantidad"],
-                )
+                movimiento = Movimiento(fila)
                 self.movimientos.append(movimiento)
 
     def agregar(self, movimiento):
