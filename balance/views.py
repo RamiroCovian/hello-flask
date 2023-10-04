@@ -15,7 +15,7 @@ def home():
     return render_template("inicio.html", movs=lista.movimientos)
 
 
-@app.route("/nuevo", methods=["GET", "POST"])
+@app.route("/nuevo/", methods=["GET", "POST"])
 def add_movement():
     """
     Crea un movimiento y lo guarda en el archivo CSV
